@@ -2,21 +2,26 @@ let inputEl = document.getElementById("input")
 let divEl = document.getElementById("div")
 let inputBtn = document.getElementById("inputBtn")
 let allTodo = []
-let indexNum ;
+let indexNum;
 function addTodo() {
-  if(inputBtn.innerText === "Update Todo" ){
+    if (inputBtn.innerText === "Update Todo") {
 
-    updateTodo()
-  }
-  
-  
-  
-    else{
-    let val = inputEl.value
-    allTodo.push(val)
-    printTodo()
-    inputEl.value = ""
-   }
+        updateTodo()
+    }
+    
+
+
+    else {
+        if(inputEl.value === ""){
+            alert("Error! input cannot be empty")
+        }
+        else{
+        let val = inputEl.value
+        allTodo.push(val)
+        printTodo()
+        inputEl.value = ""
+        }
+    }
 }
 
 function printTodo() {
@@ -25,12 +30,11 @@ function printTodo() {
     for (let i = 0; i < allTodo.length; i++) {
         divEl.innerHTML += `<div class = "task">
         <p id ="todo-${i}">${allTodo[i]}</p>
-        <span>
+        <span class = "icons">
         <button id= "btn-${i}" onClick = "editTodo(${i})" class = "edit">
-        <i class="fa-solid fa-pen"></i>
-        </button>
+        <i class="fa-solid fa-pen-to-square"></i>        </button>
         <button onClick = "deleteTodo (${i})" class = "delete">
-        <i class="fa-solid fa-trash"></i>
+        <i class="fa-sharp fa-solid fa-trash"></i>        
         </button>
         <span>
         </div>
@@ -46,24 +50,24 @@ function deleteTodo(index) {
 function editTodo(index) {
 
     let todo = document.getElementById("todo-" + index)
-   
-        inputEl.value = todo.innerText
-        inputBtn.innerText = "Update Todo"
-       indexNum = index
-    
 
-    }
-    function updateTodo (){
-        let todo = document.getElementById("todo-" + indexNum)
-        todo.innerText = inputEl.value
-        inputEl.value = ""
-        inputBtn.innerText = "Add Todo"
-    
-    }
+    inputEl.value = todo.innerText
+    inputBtn.innerText = "Update Todo"
+    indexNum = index
 
 
+}
+function updateTodo() {
+    let todo = document.getElementById("todo-" + indexNum)
+    todo.innerText = inputEl.value
+    inputEl.value = ""
+    inputBtn.innerText = "Add Todo"
 
-  
+}
+
+
+
+
 
 
 

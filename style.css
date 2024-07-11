@@ -2,7 +2,12 @@
 *{
     font-family: sans-serif;
 }
-
+.heading{
+margin:  auto;
+width: 20%;
+font-size: 2.5em;
+padding: 25px;
+}
 
 .body{
     height: 100vh;
@@ -35,21 +40,7 @@ input:focus{
     outline: none;
     border-color: #5a95ff;
 }
-.task {
-    background-color: #ffffff;
-    padding: 0.8em 1em;
-    display: grid;
-    grid-template-columns: 1fr 8fr 2fr 2fr;
-}
-.tasks{
-    
-    margin-top: 1em;
-    border: 1px solid red;
-    border-radius: 0.5em;
-    width: 100%;
-position: relative;
-padding: 1em 0.5em;
-}
+
 #inputBtn{
     position: relative;
     border-radius: 0.5em;
@@ -62,19 +53,74 @@ padding: 1em 0.5em;
     cursor: pointer;
 }
 
+.task{
+    font: 0.9em;
+    font-weight: 400;
+    word-break: break-all;
+    padding: 0.8em 1em;
+    background-color: #ffffff;
+    border-radius: 0.5em;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.task button{
+    color: #ffffff;
+    width: 4em;
+    height: 3em;
+    padding:  0.5em 0;
+    border-radius: 0.2em;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.edit{
+    background-color: #5a95ff;
+}
+.delete{
+    background-color: #ff5c5c;
+}
+
+.task p{
+    width: 70%;
+}
+.task span{
+    padding-left: 5px;
+    width: 30%;
+}
+
+
+
+.task:not(:first-child){
+    margin-top:1em  ;
+}
+/* .icons{
+    display: flex;
+    gap: 10px;
+} */
+
+
+
+
+@media only screen and (max-width: 600px) {
+    #inputBtn{
+
+        width: 100%;
+    }
+
+    .heading{
+        margin:  0auto;
+        width: 40%;
+      
+        }
 
 
 
 
 
 
-
-
-
-
-
-
-
+}
 
 
 
